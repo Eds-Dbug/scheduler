@@ -14,7 +14,22 @@ export function getAppointmentsForDay(state, day) {
   const result = appointmentArr.map(appointment => {
     return state.appointments[`${appointment}`];
   });
-  console.log(result)
+  //console.log(result)
 
   return result;
+}
+
+export function getInterview(state, interview) {
+
+  if(!interview) {
+    return null;
+  }
+
+  const interviewerId = interview.interviewer;
+  //need to find the the interviewer that matches id
+  const interviewer = state.interviewers[interviewerId];
+  
+  const newInterview = {...interview, interviewer: interviewer}
+  
+  return newInterview;
 }
