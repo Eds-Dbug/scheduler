@@ -25,7 +25,6 @@ const Appointment = props => {
         />
       )}
       {mode === CREATE && (
-        
         <Form 
           interviewers={[]}
           onCancel={back}
