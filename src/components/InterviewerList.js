@@ -6,26 +6,25 @@ const InterviewerList = (props) => {
   
   const interviewers = props.interviewers.map((interviewer) => {
     //let selected = interviewer.id === props.interviewer;
+    
     return (
     <InterviewerListItem 
-      key={interviewer.id} 
-      //id={interviewer.id}
+      key={interviewer.id}
+      id={interviewer.id}      //id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
       selected={interviewer.id === props.value}
-      setInterviewer={() => props.onChange(interviewer.id)}
+      setInterviewer={props.onChange}
     />)
   })
 
   return (
-    <>
-      <section className="interviewers">
-        <h4 className="interviewers__header text--light">Interviewer</h4>
-        <ul className="interviewers__list">
-          {interviewers}
-        </ul>
-      </section>
-    </>
+    <section className="interviewers" >
+      <h4 className="interviewers__header text--light">Interviewer</h4>
+      <ul className="interviewers__list">
+        {interviewers}
+      </ul>
+    </section>
   );
 };
 

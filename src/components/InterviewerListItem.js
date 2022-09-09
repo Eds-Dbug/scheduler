@@ -13,10 +13,11 @@ const InterviewerListItem = (props) => {
   const interviewerImgClass = classNames({
     'interviewers__item-image': true, 
   });
- 
+
+
   return (
     <>
-      <li className={interviewerClass} onClick={props.onChange}>
+      <li className={interviewerClass} onClick={() => props.setInterviewer(props.id)}>
         <img
           className={interviewerImgClass}
           src={props.avatar}
