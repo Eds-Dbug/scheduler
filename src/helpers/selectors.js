@@ -37,7 +37,7 @@ export function getInterviewersForDay(state, day) {
   });
 
   filteredDay.length && (interviewsArr = filteredDay[0].interviewers);
- console.log('interviewersArr:', interviewsArr)
+ //console.log('interviewersArr:', interviewsArr)
   const result = interviewsArr.map(id => {
     //console.log('interviewer:',interviewer)
     return state.interviewers[id];
