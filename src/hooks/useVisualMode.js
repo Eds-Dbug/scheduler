@@ -9,26 +9,22 @@ export default function useVisualMode(initial) {
   
     setMode(newMode);
 
-    const replaceHistory = [...history];
-    replaceHistory[replaceHistory.length-1] = newMode;
-   
-    console.log('replaceHistory:',replaceHistory);
-
     replace ?  
-    setHistory([...replaceHistory]) : 
-    setHistory([...history,newMode]);
+    setHistory(prev => [...prev.slice(0,-1), newMode]) : 
+    setHistory(prev => [...prev,newMode]);
   
-    //console.log(history);
   }
 
   function back() {
-  
+
     if(history.length > 1) {
-      const newHistory = history.pop();
-      //console.log('new history', newHistory);
-      setHistory([...newHistory]);
-      setMode(history[history.length -1]);
+
+      setMode(history[history.length -2]);
+      setHistory(prev => [...prev.slice(0,-1)]);
+      //USED POP EARLIER WHY DID IT HAVE THE BUG WHERE on the second click it got rid of everything
+      // must be mutating the original array
     }
+
   }
 
   return { mode, transition, back };
