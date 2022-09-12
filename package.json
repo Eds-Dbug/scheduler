@@ -2,7 +2,7 @@
   "name": "scheduler",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8001",
+  "proxy": "http://10.0.2.2:8001",
   "dependencies": {
     "axios": "^0.27.2",
     "classnames": "^2.2.6",
@@ -10,7 +10,6 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.4.4"
-    
   },
   "scripts": {
     "start": "react-scripts start",
