@@ -23,16 +23,16 @@ const ERROR_DELETE = "ERROR_DELETE";
 const Appointment = props => {
   const {mode, transition, back} = useVisualMode(props.interview ? SHOW : EMPTY);
 
-  function save(name, interviewer) {
-    if(!name || !interviewer) {
+  function save(student, interviewer) {
+    if(!student || !interviewer) {
       return;
     }
 
     const interview = {
-      student: name,
+      student,
       interviewer
     };
-    //console.log('interview:',int;erview)
+    
     transition(SAVING);
 
     props.bookInterview(props.id, interview)
