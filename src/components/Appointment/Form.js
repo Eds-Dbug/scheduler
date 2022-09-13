@@ -7,6 +7,8 @@ const Form = (props) => {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
+  //console.log(props.student)
+
   const reset = () => {
     setStudent("");
     setInterviewer(null);
