@@ -48,7 +48,7 @@ export default function useApplicationData() {
 
   const findDayIndex = state.days.findIndex(day => day.name === state.day);
   //console.log(findDayIndex)
-
+  const days = state.days
   let day = {}
 
   !state.appointments[id].interview ?
@@ -67,10 +67,8 @@ export default function useApplicationData() {
   //   state.days[findDayIndex] = day
   // ]
 
-  const days = state.days
+  
   days[findDayIndex] = day;
-
-  //console.log("days",days)
 
   const appointment = {
     ...state.appointments[id],
@@ -97,12 +95,13 @@ export default function useApplicationData() {
     const findDayIndex = state.days.findIndex(day => day.name === state.day);
     //console.log(findDayIndex)
 
+    const days = state.days
+    
     let day = {
         ...state.days[findDayIndex],
         spots: state.days[findDayIndex].spots + 1
       }
 
-    const days = state.days
     days[findDayIndex] = day;
 
     const appointment = {
