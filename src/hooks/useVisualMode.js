@@ -18,7 +18,6 @@ export default function useVisualMode(initial) {
   function back() {
 
     if(history.length > 1) {
-
       setMode(history[history.length -2]);
       setHistory(prev => [...prev.slice(0,-1)]);
       //USED POP EARLIER WHY DID IT HAVE THE BUG WHERE on the second click it got rid of everything

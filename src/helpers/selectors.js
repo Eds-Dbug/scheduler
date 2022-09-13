@@ -45,3 +45,16 @@ export function getInterviewersForDay(state, day) {
 //console.log('result',result);
 return result
 }
+
+export function findDayIndex(day) {
+  const days ={
+    Monday: 0,
+    Tuesday: 1,
+    Wendsday: 2,
+    Thursday: 3,
+    Friday: 4,
+    // Saturday: 5,
+    // Sunday: 6,
+  }
+  return days[day]
+}
