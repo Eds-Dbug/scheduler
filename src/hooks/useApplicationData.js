@@ -48,7 +48,7 @@ export default function useApplicationData() {
 
   const findDayIndex = state.days.findIndex(day => day.name === state.day);
   //console.log(findDayIndex)
-  const days = state.days
+  const days = [...state.days]
   let day = {}
 
   !state.appointments[id].interview ?
@@ -62,12 +62,8 @@ export default function useApplicationData() {
     spots: state.days[findDayIndex].spots
   };
 
-  // const days = [
-  //   ...state.days,
-  //   state.days[findDayIndex] = day
-  // ]
-
-  
+  // days.splice(findDayIndex,1,day);
+  // console.log('spliceddays:',days)
   days[findDayIndex] = day;
 
   const appointment = {
@@ -95,13 +91,14 @@ export default function useApplicationData() {
     const findDayIndex = state.days.findIndex(day => day.name === state.day);
     //console.log(findDayIndex)
 
-    const days = state.days
+    const days = [...state.days]
     
     let day = {
         ...state.days[findDayIndex],
         spots: state.days[findDayIndex].spots + 1
-      }
+    }
 
+    //this way is better
     days[findDayIndex] = day;
 
     const appointment = {
