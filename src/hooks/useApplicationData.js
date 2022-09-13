@@ -13,7 +13,7 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
-  console.log(state)
+ // console.log(state)
 
   /**
  * alias actions for our new useState 
@@ -25,19 +25,52 @@ export default function useApplicationData() {
  * FUNCTION BOOK INTERVIEW
  * */
  function bookInterview(id, interview) {
-  const foundDay = state.days.find((day) => day.appointments.includes(id));
-  console.log('foundDay:', foundDay)
-  const days = state.days.map(day => {
-    if (
-      day.name === foundDay.name &&
-      state.appointments[id].interview === null
-    ) {
-      return { ...day, spots: day.spots - 1 };
-    } else {
-      return day;
-    }
-  });
+  // const foundDay = state.days.find((day) => day.appointments.includes(id));
+  // const days = state.days.map(day => {
+  //   if (
+  //     day.name === foundDay.name &&
+  //     state.appointments[id].interview === null
+  //   ) {
+  //     return { ...day, spots: day.spots - 1 };
+  //   } else {
+  //     return day;
+  //   }
+  // });
 
+    // const foundDay = state.days.find((day) => day.appointments.includes(id));
+    // // const days = state.days.map((day) => {
+    // //   if (day.name === foundDay.name) {
+    // //     return { ...day, spots: day.spots + 1 };
+    // //   } else {
+    // //     return day;
+    // //   }
+    // // });
+
+  const findDayIndex = state.days.findIndex(day => day.name === state.day);
+  //console.log(findDayIndex)
+
+  let day = {}
+
+  !state.appointments[id].interview ?
+    day = {
+      ...state.days[findDayIndex],
+      spots: state.days[findDayIndex].spots - 1
+    }
+  :
+  day = {
+    ...state.days[findDayIndex],
+    spots: state.days[findDayIndex].spots
+  };
+
+  // const days = [
+  //   ...state.days,
+  //   state.days[findDayIndex] = day
+  // ]
+
+  const days = state.days
+  days[findDayIndex] = day;
+
+  //console.log("days",days)
 
   const appointment = {
     ...state.appointments[id],
@@ -51,7 +84,7 @@ export default function useApplicationData() {
 
  // console.log( {...interview});
   return axios.put(`/api/appointments/${id}`, {interview})
-    .then(res => {
+    .then(() => {
       setState({
         ...state,
         appointments,
@@ -61,28 +94,32 @@ export default function useApplicationData() {
   }
 
   function cancelInterview(id) {
+    const findDayIndex = state.days.findIndex(day => day.name === state.day);
+    //console.log(findDayIndex)
+
+    let day = {
+        ...state.days[findDayIndex],
+        spots: state.days[findDayIndex].spots + 1
+      }
+
+    const days = state.days
+    days[findDayIndex] = day;
+
     const appointment = {
       ...state.appointments[id],
       interview: null,
     };
+
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
-    const foundDay = state.days.find((day) => day.appointments.includes(id));
-    const days = state.days.map((day) => {
-      if (day.name === foundDay.name) {
-        return { ...day, spots: day.spots + 1 };
-      } else {
-        return day;
-      }
-    });
+  
     return axios.delete(`/api/appointments/${id}`, appointment).then(() => {
       setState({ 
         ...state, 
         appointments, 
-        days 
-      });
+        days });
     });
   }
 
