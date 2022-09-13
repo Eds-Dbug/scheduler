@@ -26,6 +26,7 @@ export default function useApplicationData() {
  * */
  function bookInterview(id, interview) {
   const foundDay = state.days.find((day) => day.appointments.includes(id));
+  console.log('foundDay:', foundDay)
   const days = state.days.map(day => {
     if (
       day.name === foundDay.name &&
