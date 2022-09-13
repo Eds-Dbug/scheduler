@@ -5,8 +5,6 @@ import Appointment from "./Appointment";
 import useApplicationData from "hooks/useApplicationData";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay} from "../helpers/selectors";
 
-
-
 export default function Application(props) {
 
   const {
@@ -22,10 +20,6 @@ export default function Application(props) {
   let dailyAppointments = getAppointmentsForDay(state,state.day);
   let interviewersOfDay = getInterviewersForDay(state,state.day);
  
-
-
-   
-
   
   return (
     <main className="layout">
