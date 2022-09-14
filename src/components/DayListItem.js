@@ -16,7 +16,7 @@ export default function DayListItem(props) {
     if(spots === 1) {
       return '1 spot';
     }
-    return `${spots} spots`
+    return `${spots} spots`;
   }
 
   return (
