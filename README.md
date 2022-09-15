@@ -1,9 +1,13 @@
 # Interview Scheduler
 
 ## Dependencies
-
 - Node 12.x.x
-
+- axios
+- react
+- @testing-library/react-hooks
+- react-test-renderer
+- classnames
+- normalize.css
 ## Getting Started
 
 
