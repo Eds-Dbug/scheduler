@@ -36,24 +36,24 @@ Install dependencies with `npm install`.
 
 
 ## Final Product
-- The page enlarged
+- The main page
 
-!["The page enlarged"](https://github.com/Eds-Dbug/tweeter/blob/master/public/images/tweeter_page_large.png)
+!["The main page"](https://github.com/Eds-Dbug/scheduler/blob/master/public/images/screenshots/main_page.png)
 
-- The page shrunk
+- Booking an appointment
 
-!["The page shrunk"](https://github.com/Eds-Dbug/tweeter/blob/master/public/images/tweeter_page_small.png)
+!["Booking an appointment"](https://github.com/Eds-Dbug/scheduler/blob/master/public/images/screenshots/booking_appointment.png)
 
-- The with a added tweet "Hello There!"
+- Appointment with "GREEN MAN" and interviewer : "Linday Chu" was booked
 
-!["The with a added tweet "Hello There!" "](https://github.com/Eds-Dbug/tweeter/blob/master/public/images/added_tweet_hello_there1.png)
+!["Appointment with "GREEN MAN" and interviewer : "Linday Chu" was booked"](https://github.com/Eds-Dbug/scheduler/blob/master/public/images/screenshots/appointment_booked.png)
 
-- An error thrown when the text is empty
+- Deleting an appointment
 
-!["An error thrown when the text is empty"](https://github.com/Eds-Dbug/tweeter/blob/master/public/images/with_empty_message.png)
+!["Deleting an appointment"](https://github.com/Eds-Dbug/scheduler/blob/master/public/images/screenshots/deleting_appointment.png)
 
-- An error thrown when the character limit exceeds 140
+- Appointment was deleted
 
-!["An error thrown when the character limit exceeds 140"](https://github.com/Eds-Dbug/tweeter/blob/master/public/images/error_message_exceed.png)
+!["Appointment was deleted](https://github.com/Eds-Dbug/scheduler/blob/master/public/images/screenshots/appointment_deleted.png)
 
 
